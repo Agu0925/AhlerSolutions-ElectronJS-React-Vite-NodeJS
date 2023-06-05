@@ -1,7 +1,7 @@
 import { app, BrowserWindow, Menu } from 'electron'
 import path from 'node:path'
 //LLamo a la base de datos
-require('../src/NodeJS/app.js');
+require(path.join(__dirname, '../src/NodeJS/app.js'));
 // The built directory structure
 //
 // ├─┬─┬ dist
