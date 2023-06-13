@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Mostrar, id, agregar, modificar, borrar, enviarProduccion, finalizar, modal, idmodal } from "./Funciones"
-import { useNavigate } from 'react-router-dom';
 //Autenticacion de usuario
 export const Auth = () => {
   if (localStorage.getItem("usuario")) {
