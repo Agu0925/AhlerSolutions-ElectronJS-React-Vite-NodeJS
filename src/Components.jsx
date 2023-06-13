@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Mostrar, id, agregar, modificar, borrar, enviarProduccion, finalizar, modal, idmodal } from "./Funciones"
+import { useNavigate } from 'react-router-dom';
 //Autenticacion de usuario
 export const Auth = () => {
   if (localStorage.getItem("usuario")) {
@@ -17,11 +18,11 @@ export const Auth = () => {
       .then((resp) => resp.json())
       .then((data) => {
         if (data.status !== true) {
-          location.href = "/Login";
+          history.pushState({}, "", "/Login");
         }
       });
   } else {
-    location.href = "/Login";
+    history.pushState({}, "", "/Login");
   }
 };
 //OnSubmit para Login
@@ -270,8 +271,8 @@ export const Main = () => {
         <div className="text-white">
           {/*<!-- Mostrar Productos -->*/}
           <div className="text-end">
-            <button class="bi bi-sort-numeric-up-alt me-2 h2 btn btn-secondary"></button>
-            <button class="bi bi-sort-numeric-down-alt h2 btn btn-secondary"></button>
+            <button className="bi bi-sort-numeric-up-alt me-2 h2 btn btn-secondary"></button>
+            <button className="bi bi-sort-numeric-down-alt h2 btn btn-secondary"></button>
           </div>
           <div className="border w-100 d-print-none">
             <h2 className="text-center" id="h2Productos">
