@@ -93,7 +93,7 @@ export const Signup = () => {
       .then((data) => {
         if (data.status === true) {
           document.getElementById("errorSignup").innerHTML = "";
-          location.href = "/Login";
+          location.hash = "/Login";
         } else {
           document.getElementById("errorSignup").innerHTML = data.res;
         }

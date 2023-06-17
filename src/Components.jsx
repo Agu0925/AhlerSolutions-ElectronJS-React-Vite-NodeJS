@@ -17,11 +17,11 @@ export const Auth = () => {
       .then((resp) => resp.json())
       .then((data) => {
         if (data.status !== true) {
-          history.pushState({}, "", "/Login");
+          location.hash = '/Login';
         }
       });
   } else {
-    history.pushState({}, "", "/Login");
+    location.hash = '/Login';
   }
 };
 //OnSubmit para Login
@@ -74,7 +74,7 @@ export const SumLogin = (event) => {
       .then((resp) => resp.json())
       .then((data) => {
         if (data.status === true) {
-          location.href = "/";
+          location.hash = "/";
         }
       });
   }
@@ -129,7 +129,7 @@ export const Header = () => {
                 </a>
                 <ul className={`dropdown-menu${isDropdownOpen ? " show" : ""}`}>
                   <li>
-                    <a className="dropdown-item" href="/">
+                    <a className="dropdown-item" href="#">
                       {JSON.parse(localStorage.getItem("usuario")).name}
                     </a>
                   </li>
@@ -139,10 +139,11 @@ export const Header = () => {
                   <li>
                     <a
                       id="closeSession"
-                      className="dropdown-item"
-                      href="/login"
+                      className="dropdown-item pointer"
+                      href="#"
                       onClick={() => {
                         localStorage.removeItem("usuario");
+                        location.hash = "/Login";
                       }}
                     >
                       Sign off
@@ -151,7 +152,13 @@ export const Header = () => {
                 </ul>
               </li>
               <li>
-                <a href="#foot" className="nav-link text-white text-center">
+                <a
+                  href="#"
+                  onClick={() => {
+                    window.scroll(0, document.documentElement.scrollHeight);
+                  }}
+                  className="nav-link text-white text-center"
+                >
                   <i className="bi-envelope display-6"></i>
                   <p className="m-0">Contact</p>
                 </a>
@@ -168,7 +175,11 @@ export const Main = () => {
   return (
     <main className="container">
       <div className="text-end fixed-top m-md-3 d-print-none">
-        <a href="#h2Produccion">
+        <a href="#"
+          onClick={() => {
+            window.scroll(0, document.documentElement.scrollHeight);
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="2.5rem"
@@ -181,7 +192,11 @@ export const Main = () => {
         </a>
       </div>
       <div className="text-end fixed-bottom m-md-3 d-print-none">
-        <a href="#top">
+        <a href="#"
+          onClick={() => {
+            window.scroll(0, 0);
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="2.5rem"
@@ -428,7 +443,7 @@ export const Footer = () => {
         {/* Right */}
         <div>
           <a
-            href=""
+            href="https://www.instagram.com/muebleria.ahlers/"
             target="_blank"
             className="me-4 text-reset text-decoration-none"
           >
@@ -476,22 +491,22 @@ export const Footer = () => {
               {/* Links */}
               <h6 className="text-uppercase fw-bold mb-4">Products</h6>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#" className="text-reset">
                   React
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#" className="text-reset">
                   Nodejs
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#" className="text-reset">
                   Css
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#" className="text-reset">
                   Bootstrap
                 </a>
               </p>

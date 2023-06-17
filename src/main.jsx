@@ -12,7 +12,7 @@ export const Router = () => {
   return (
     <HashRouter>
       <Routes>
-        <Route path='/' element={<> <Auth /> <App /> </> } />
+        <Route index element={<> <Auth /> <App /> </> } />
         <Route path='/Login' element={<Login />} />
         <Route path='/SignUp' element={<Signup />} />
         <Route path='*' element={<div><h2 className='text-danger text-center'>Error: Direccion no Encontrada</h2></div>} />
