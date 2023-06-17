@@ -17,11 +17,11 @@ export const Auth = () => {
       .then((resp) => resp.json())
       .then((data) => {
         if (data.status !== true) {
-          location.hash = '/Login';
+          location.hash = "/Login";
         }
       });
   } else {
-    location.hash = '/Login';
+    location.hash = "/Login";
   }
 };
 //OnSubmit para Login
@@ -139,11 +139,11 @@ export const Header = () => {
                   <li>
                     <a
                       id="closeSession"
-                      className="dropdown-item pointer"
+                      className="dropdown-item"
                       href="#"
                       onClick={() => {
                         localStorage.removeItem("usuario");
-                        location.hash = "/Login";
+                        location.hash = '/Login';
                       }}
                     >
                       Sign off
@@ -152,12 +152,10 @@ export const Header = () => {
                 </ul>
               </li>
               <li>
-                <a
-                  href="#"
+                <a href="#" className="nav-link text-white text-center"
                   onClick={() => {
                     window.scroll(0, document.documentElement.scrollHeight);
                   }}
-                  className="nav-link text-white text-center"
                 >
                   <i className="bi-envelope display-6"></i>
                   <p className="m-0">Contact</p>
@@ -194,7 +192,7 @@ export const Main = () => {
       <div className="text-end fixed-bottom m-md-3 d-print-none">
         <a href="#"
           onClick={() => {
-            window.scroll(0, 0);
+            window.scroll(0, document.documentElement.scrollHeight);
           }}
         >
           <svg
@@ -285,8 +283,8 @@ export const Main = () => {
         <div className="text-white">
           {/*<!-- Mostrar Productos -->*/}
           <div className="text-end">
-            <button className="bi bi-sort-numeric-up-alt me-2 h2 btn btn-secondary"></button>
-            <button className="bi bi-sort-numeric-down-alt h2 btn btn-secondary"></button>
+            <button class="bi bi-sort-numeric-up-alt me-2 h2 btn btn-secondary"></button>
+            <button class="bi bi-sort-numeric-down-alt h2 btn btn-secondary"></button>
           </div>
           <div className="border w-100 d-print-none">
             <h2 className="text-center" id="h2Productos">
@@ -443,7 +441,7 @@ export const Footer = () => {
         {/* Right */}
         <div>
           <a
-            href="https://www.instagram.com/muebleria.ahlers/"
+            href=""
             target="_blank"
             className="me-4 text-reset text-decoration-none"
           >
@@ -491,22 +489,22 @@ export const Footer = () => {
               {/* Links */}
               <h6 className="text-uppercase fw-bold mb-4">Products</h6>
               <p>
-                <a href="#" className="text-reset">
+                <a href="#!" className="text-reset">
                   React
                 </a>
               </p>
               <p>
-                <a href="#" className="text-reset">
+                <a href="#!" className="text-reset">
                   Nodejs
                 </a>
               </p>
               <p>
-                <a href="#" className="text-reset">
+                <a href="#!" className="text-reset">
                   Css
                 </a>
               </p>
               <p>
-                <a href="#" className="text-reset">
+                <a href="#!" className="text-reset">
                   Bootstrap
                 </a>
               </p>

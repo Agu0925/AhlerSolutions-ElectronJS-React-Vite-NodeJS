@@ -178,18 +178,18 @@ export function agregar() {
         if (datos.status === true) {
           document.getElementById(
             "errorProductos"
-          ).innerHTML = `<label className="text-success" for="validar"> ${datos.res} </label>`;
+          ).innerHTML = `<label class="text-success" for="validar"> ${datos.res} </label>`;
           <Mostrar />
         } else {
           document.getElementById(
             "errorProductos"
-          ).innerHTML = `<label className="text-danger" for="validar"> ${datos.res} </label>`;
+          ).innerHTML = `<label class="text-danger" for="validar"> ${datos.res} </label>`;
         }
       });
   } else {
     document.getElementById(
       "errorProductos"
-    ).innerHTML = `<label className="text-danger" for="validar"> No puede enviar datos vacios </label>`;
+    ).innerHTML = `<label class="text-danger" for="validar"> No puede enviar datos vacios </label>`;
   }
 }
 //Modificar Productos
@@ -210,12 +210,12 @@ export function modificar() {
       .then((resp) => resp.json())
       .then((datos) => {
         if (datos.status === true) {
-          document.getElementById("errorProductos").innerHTML = `<label className="text-success" for="validar"> ${datos.res} </label>`;
+          document.getElementById("errorProductos").innerHTML = `<label class="text-success" for="validar"> ${datos.res} </label>`;
           <Mostrar />
-        } else { document.getElementById("errorProductos").innerHTML = `<label className="text-danger" for="validar"> ${datos.res} </label>`; }
+        } else { document.getElementById("errorProductos").innerHTML = `<label class="text-danger" for="validar"> ${datos.res} </label>`; }
       });
   } else {
-    document.getElementById("errorProductos").innerHTML = `<label className="text-danger" for="validar"> No se pueden enviar datos vacios </label>`;
+    document.getElementById("errorProductos").innerHTML = `<label class="text-danger" for="validar"> No se pueden enviar datos vacios </label>`;
   }
 }
 //Borrar Productos
@@ -227,8 +227,8 @@ export function borrar() {
       .then((resp) => resp.json())
       .then((datos) => {
         if (datos.status === true) {
-          document.getElementById("errorProductos").innerHTML = `<label className="text-success" for="validar"> ${datos.res} </label>`;
-        } else { document.getElementById("errorProductos").innerHTML = `<label className="text-danger" for="validar"> ${datos.res} </label>`; }
+          document.getElementById("errorProductos").innerHTML = `<label class="text-success" for="validar"> ${datos.res} </label>`;
+        } else { document.getElementById("errorProductos").innerHTML = `<label class="text-danger" for="validar"> ${datos.res} </label>`; }
       });
     document.getElementById("producto").value = "";
     document.getElementById("cantidad").value = "";
@@ -253,11 +253,11 @@ export function modal(id) {
       if (prod.partes) {
         for (const partes of prod.partes) {
           anclados.innerHTML += `
-              <div id="anclaDiv${partes.id}" className="row border bg-success p-2">
-                  <div className="col text-center m-auto"><p className="m-auto"><span id="prod${partes.id}">${partes.Producto}</span></p></div>
-                  <div className="col text-center m-auto"><p className="m-auto">Cant - <span id="cant${partes.id}">${partes.cantidad}</span></p></div>
-                  <div className="col-2 text-center m-auto"><p className="m-auto">ID - <span id="id${partes.id}">${partes.id}</span></p></div>
-                  <div className="col text-end"><span onclick="elimAncla(${partes.id})" className='btn btn-danger'>X</span></div>
+              <div id="anclaDiv${partes.id}" class="row border bg-success p-2">
+                  <div class="col text-center m-auto"><p class="m-auto"><span id="prod${partes.id}">${partes.Producto}</span></p></div>
+                  <div class="col text-center m-auto"><p class="m-auto">Cant - <span id="cant${partes.id}">${partes.cantidad}</span></p></div>
+                  <div class="col-2 text-center m-auto"><p class="m-auto">ID - <span id="id${partes.id}">${partes.id}</span></p></div>
+                  <div class="col text-end"><span onclick="elimAncla(${partes.id})" class='btn btn-danger'>X</span></div>
               </div>
               `;
           ids.push(partes.id);
@@ -280,10 +280,10 @@ export function modal(id) {
               document.getElementById("buscProducto").value == ""
             ) {
               modalInfo += `
-                      <div id="div${iterator.id}" className="row border bg-dark p-2">
-                        <div className="col my-auto">${iterator.Producto}</div>
-                        <div className="col my-auto"><input type="number" className="input-group" name="" id="${iterator.id}"></div>  
-                        <div className="col text-end"><span onclick='anclar(${iterator.id})' className='btn btn-success'>+</span></div>
+                      <div id="div${iterator.id}" class="row border bg-dark p-2">
+                        <div class="col my-auto">${iterator.Producto}</div>
+                        <div class="col my-auto"><input type="number" class="input-group" name="" id="${iterator.id}"></div>  
+                        <div class="col text-end"><span onclick='anclar(${iterator.id})' class='btn btn-success'>+</span></div>
                       </div>
                       `;
             }
@@ -315,22 +315,22 @@ export function enviarProduccion() {
       if (document.getElementById('cantProducto').value > 0) {
         if (iterator.partes) {
           for (const partes of iterator.partes) {
-            productoAnclado += " - " + partes.Producto + ": <span className='" + "idproduccion" + partes.id + "'>" + partes.cantidad * document.getElementById('cantProducto').value + "</span>" + " ";
+            productoAnclado += " - " + partes.Producto + ": <span class='" + "idproduccion" + partes.id + "'>" + partes.cantidad * document.getElementById('cantProducto').value + "</span>" + " ";
           };
           if (!document.getElementById(`produc${iterator.id}`)) {
             document.getElementById('produccion').innerHTML += `
-  <div id="produc${iterator.id}" className="col-md-6 py-md-3 m-auto border btn btn-success">
-  <div className="row">
-    <div className="col-12 text-end my-2 my-md-1">
-    <button id="boton${iterator.id}" type="button" className="btn-close" aria-label="Close"></button>    
+  <div id="produc${iterator.id}" class="col-md-6 py-md-3 m-auto border btn btn-success">
+  <div class="row">
+    <div class="col-12 text-end my-2 my-md-1">
+    <button id="boton${iterator.id}" type="button" class="btn-close" aria-label="Close"></button>    
     </div>
-    <div className="col-12 text-center my-2 my-md-1"></div>
-    <div className="col-12 my-2 my-md-1">
-        <h4 className="card-title">${iterator.Producto}</h4>
-        <p className="card-text my-md-4 text-start">Cantidad - <span id="c${iterator.id}">${parseInt(document.getElementById('cantProducto').value)}</span></p>
-        <p className="card-text my-md-4 text-start">Partes ${productoAnclado}</p>
+    <div class="col-12 text-center my-2 my-md-1"></div>
+    <div class="col-12 my-2 my-md-1">
+        <h4 class="card-title">${iterator.Producto}</h4>
+        <p class="card-text my-md-4 text-start">Cantidad - <span id="c${iterator.id}">${parseInt(document.getElementById('cantProducto').value)}</span></p>
+        <p class="card-text my-md-4 text-start">Partes ${productoAnclado}</p>
     </div>
-    <div className="col-md-12 my-2 my-md-1">
+    <div class="col-md-12 my-2 my-md-1">
     </div>
   </div>
   </div>
@@ -356,18 +356,18 @@ export function enviarProduccion() {
         } else {
           if (!document.getElementById(`produc${iterator.id}`)) {
             document.getElementById('produccion').innerHTML += `
-  <div id="produc${iterator.id}" className="col-md-6 py-md-3 m-auto border btn btn-success">
-  <div className="row">
-    <div className="col-12 text-end my-2 my-md-1">
-    <button id="boton${iterator.id}" type="button" className="btn-close" aria-label="Close"></button>    
+  <div id="produc${iterator.id}" class="col-md-6 py-md-3 m-auto border btn btn-success">
+  <div class="row">
+    <div class="col-12 text-end my-2 my-md-1">
+    <button id="boton${iterator.id}" type="button" class="btn-close" aria-label="Close"></button>    
     </div>
-    <div className="col-12 text-center my-2 my-md-1"></div>
-    <div className="col-12 my-2 my-md-1">
-        <h4 className="card-title">${iterator.Producto}</h4>
-        <p className="card-text my-md-4 text-start">Cantidad - <span id="c${iterator.id}">${parseInt(document.getElementById('cantProducto').value)}</span></p>
-        <p className="card-text my-md-4 text-start">Partes - </p>
+    <div class="col-12 text-center my-2 my-md-1"></div>
+    <div class="col-12 my-2 my-md-1">
+        <h4 class="card-title">${iterator.Producto}</h4>
+        <p class="card-text my-md-4 text-start">Cantidad - <span id="c${iterator.id}">${parseInt(document.getElementById('cantProducto').value)}</span></p>
+        <p class="card-text my-md-4 text-start">Partes - </p>
     </div>
-    <div className="col-md-12 my-2 my-md-1">
+    <div class="col-md-12 my-2 my-md-1">
     </div>
   </div>
   </div>
