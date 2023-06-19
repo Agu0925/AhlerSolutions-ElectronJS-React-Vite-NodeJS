@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from 'electron'
 import path from 'node:path'
 //LLamo a la base de datos
-require(path.join(__dirname, '../src/NodeJS/app.js'));
+require(path.join(__dirname, '../public/NodeJS/app.js'));
 // The built directory structure
 //
 // ├─┬─┬ dist
@@ -37,7 +37,6 @@ function createWindow() {
   } else {
     win.loadFile('dist/index.html')
   }
-  win.webContents.openDevTools();
   //Abrir ConsolaDev - mainWindow.webContents.openDevTools();
   //const template = [
   //  {
