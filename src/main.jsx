@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import "../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import {App} from './App'
 import {Auth} from './Components'

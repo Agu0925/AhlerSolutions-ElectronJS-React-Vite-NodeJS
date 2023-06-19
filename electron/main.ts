@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu } from 'electron'
+import { app, BrowserWindow } from 'electron'
 import path from 'node:path'
 //LLamo a la base de datos
 require(path.join(__dirname, '../src/NodeJS/app.js'));
@@ -35,17 +35,17 @@ function createWindow() {
   if (VITE_DEV_SERVER_URL) {
     win.loadURL(VITE_DEV_SERVER_URL)
   } else {
-    // win.loadFile('dist/index.html')
-    win.loadFile(path.join(process.env.DIST, 'index.html'))
+    win.loadFile('dist/index.html')
   }
+  win.webContents.openDevTools();
   //Abrir ConsolaDev - mainWindow.webContents.openDevTools();
-  const template = [
-    {
-      label: ""
-    }
-  ];
-  const menu = Menu.buildFromTemplate(template)
-  Menu.setApplicationMenu(menu)
+  //const template = [
+  //  {
+  //    label: ""
+  //  }
+  //];
+  //const menu = Menu.buildFromTemplate(template)
+  //Menu.setApplicationMenu(menu)
 }
 
 app.on('window-all-closed', () => {

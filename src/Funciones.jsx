@@ -257,7 +257,7 @@ export function modal(id) {
                   <div class="col text-center m-auto"><p class="m-auto"><span id="prod${partes.id}">${partes.Producto}</span></p></div>
                   <div class="col text-center m-auto"><p class="m-auto">Cant - <span id="cant${partes.id}">${partes.cantidad}</span></p></div>
                   <div class="col-2 text-center m-auto"><p class="m-auto">ID - <span id="id${partes.id}">${partes.id}</span></p></div>
-                  <div class="col text-end"><span onclick="elimAncla(${partes.id})" class='btn btn-danger'>X</span></div>
+                  <div class="col text-end"><span onclick='elimAncla(${partes.id})' class='btn btn-danger'>X</span></div>
               </div>
               `;
           ids.push(partes.id);
