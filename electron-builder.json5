@@ -17,10 +17,9 @@
     target: [
       {
         target: "nsis",
-        arch: ["x64", "ia32"],
+        arch: ["x64"],
       },
     ],
-    minimumVersion: "7.0.0",
     artifactName: "${productName}_${version}.${ext}",
   },
   nsis: {
