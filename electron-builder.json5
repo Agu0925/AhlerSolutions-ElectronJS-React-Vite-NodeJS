@@ -8,7 +8,7 @@
   directories: {
     output: "release/${version}",
   },
-  files: ["dist-electron", "dist", "src/**/*"],
+  files: ["dist-electron", "dist", "src/**/*", "public/**/*"],
   mac: {
     artifactName: "${productName}_${version}.${ext}",
     target: ["dmg"],
